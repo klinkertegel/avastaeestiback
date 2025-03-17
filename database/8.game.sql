@@ -1,0 +1,10 @@
+INSERT INTO game.game (id, user_id, name, description, time_per_location, status) VALUES (default, 15, 'Lihtsam mäng', 'valime lihtsamad küsimused', 2, 'A');
+INSERT INTO game.game (id, user_id, name, description, time_per_location, status) VALUES (default, 8, 'Ilusad paigad', 'Arva ära, kus need paigad asuvad', 1, 'A');
+INSERT INTO game.game (id, user_id, name, description, time_per_location, status) VALUES (default, 8, 'Veeäärsed paigad', 'Paigad, mis on väga lähedalt seotud veekogudega', 1, 'A');
+INSERT INTO game.game (id, user_id, name, description, time_per_location, status) VALUES (default, 14, 'Kaunid tuletornid', 'Märgi kaardile Eestimaa kaunid tuletornid', 1, 'A');
+INSERT INTO game.game (id, user_id, name, description, time_per_location, status) VALUES (default, 13, 'Huvitavad paigad', 'Ei ole liiga kerged ega rasked, mängi julgelt:)', 1, 'A');
+INSERT INTO game.game (id, user_id, name, description, time_per_location, status) VALUES (default, 12, 'Lossid-kindlused', 'Kas tead, kus asuvad need lossid või kindlused?', 1, 'A');
+INSERT INTO game.game (id, user_id, name, description, time_per_location, status) VALUES (default, 9, 'Lahedaid kohti Eestimaal', 'Lihtne ja kiire mäng', 1, 'A');
+INSERT INTO game.game (id, user_id, name, description, time_per_location, status) VALUES (default, 9, 'Põnevaid leide Eestimaa pealt', 'Kindlasti tead, aga võib-olla ei tea ka: )', 1, 'A');
+INSERT INTO game.game (id, user_id, name, description, time_per_location, status) VALUES (default, 10, 'Kas tunned Eesti vanglaid', 'Märgi kaardile, kus aruvad need vanglad', 1, 'A');
+INSERT INTO game.game (id, user_id, name, description, time_per_location, status) VALUES (default, 11, 'Eestimaa muuseumid', 'Nii väikseid kui suuri', 1, 'A');

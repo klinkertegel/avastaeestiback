@@ -1,0 +1,13 @@
+INSERT INTO game.random_game (id, user_id, total_locations, locations_answered, is_complete) VALUES (default, 15, 5, 5, true);
+INSERT INTO game.random_game (id, user_id, total_locations, locations_answered, is_complete) VALUES (default, 15, 5, 5, true);
+INSERT INTO game.random_game (id, user_id, total_locations, locations_answered, is_complete) VALUES (default, 8, 5, 5, true);
+INSERT INTO game.random_game (id, user_id, total_locations, locations_answered, is_complete) VALUES (default, 8, 5, 5, true);
+INSERT INTO game.random_game (id, user_id, total_locations, locations_answered, is_complete) VALUES (default, 14, 5, 0, false);
+INSERT INTO game.random_game (id, user_id, total_locations, locations_answered, is_complete) VALUES (default, 12, 5, 5, true);
+INSERT INTO game.random_game (id, user_id, total_locations, locations_answered, is_complete) VALUES (default, 12, 5, 0, false);
+INSERT INTO game.random_game (id, user_id, total_locations, locations_answered, is_complete) VALUES (default, 11, 5, 5, true);
+INSERT INTO game.random_game (id, user_id, total_locations, locations_answered, is_complete) VALUES (default, 10, 5, 5, true);
+INSERT INTO game.random_game (id, user_id, total_locations, locations_answered, is_complete) VALUES (default, 9, 5, 5, true);
+INSERT INTO game.random_game (id, user_id, total_locations, locations_answered, is_complete) VALUES (default, 12, 5, 5, true);
+INSERT INTO game.random_game (id, user_id, total_locations, locations_answered, is_complete) VALUES (default, 12, 5, 5, true);
+INSERT INTO game.random_game (id, user_id, total_locations, locations_answered, is_complete) VALUES (default, 13, 5, 5, true);
