@@ -3,7 +3,7 @@
 
 -- tables
 -- Table: favourite
-CREATE TABLE favourite (
+CREATE TABLE game.favourite (
                            id serial  NOT NULL,
                            user_id int  NOT NULL,
                            location_id int  NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE favourite (
 );
 
 -- Table: game
-CREATE TABLE game (
+CREATE TABLE game.game (
                       id serial  NOT NULL,
                       user_id int  NOT NULL,
                       name varchar(255)  NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE game (
 );
 
 -- Table: game_location
-CREATE TABLE game_location (
+CREATE TABLE game.game_location (
                                id serial  NOT NULL,
                                game_id int  NOT NULL,
                                location_id int  NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE game_location (
 );
 
 -- Table: leader_board
-CREATE TABLE leader_board (
+CREATE TABLE game.leader_board (
                               id serial  NOT NULL,
                               game_id int  NOT NULL,
                               user_id int  NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE leader_board (
 );
 
 -- Table: location
-CREATE TABLE location (
+CREATE TABLE game.location (
                           id serial  NOT NULL,
                           name varchar(255)  NOT NULL,
                           longitude decimal(10,8)  NOT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE location (
 );
 
 -- Table: random_game
-CREATE TABLE random_game (
+CREATE TABLE game.random_game (
                              id serial  NOT NULL,
                              user_id int  NOT NULL,
                              total_locations int  NOT NULL,
@@ -63,7 +63,7 @@ CREATE TABLE random_game (
 );
 
 -- Table: random_game_location
-CREATE TABLE random_game_location (
+CREATE TABLE game.random_game_location (
                                       id serial  NOT NULL,
                                       random_game_id int  NOT NULL,
                                       location_id int  NOT NULL,
@@ -75,14 +75,14 @@ CREATE TABLE random_game_location (
 );
 
 -- Table: role
-CREATE TABLE role (
+CREATE TABLE game.role (
                       id serial  NOT NULL,
                       role_name varchar(255)  NOT NULL,
                       CONSTRAINT role_pk PRIMARY KEY (id)
 );
 
 -- Table: user
-CREATE TABLE "user" (
+CREATE TABLE game."user" (
                         id serial  NOT NULL,
                         role_id int  NOT NULL,
                         email varchar(255)  NOT NULL,
@@ -94,7 +94,7 @@ CREATE TABLE "user" (
 );
 
 -- Table: user_game
-CREATE TABLE user_game (
+CREATE TABLE game.user_game (
                            id serial  NOT NULL,
                            user_id int  NOT NULL,
                            game_id int  NOT NULL,
@@ -107,7 +107,7 @@ CREATE TABLE user_game (
 );
 
 -- Table: user_game_location
-CREATE TABLE user_game_location (
+CREATE TABLE game.user_game_location (
                                     id serial  NOT NULL,
                                     user_game_id int  NOT NULL,
                                     location_id int  NOT NULL,
@@ -122,137 +122,137 @@ CREATE TABLE user_game_location (
 
 -- foreign keys
 -- Reference: favourite_location (table: favourite)
-ALTER TABLE favourite ADD CONSTRAINT favourite_location
+ALTER TABLE game.favourite ADD CONSTRAINT favourite_location
     FOREIGN KEY (location_id)
-        REFERENCES location (id)
+        REFERENCES game.location (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: favourite_user (table: favourite)
-ALTER TABLE favourite ADD CONSTRAINT favourite_user
+ALTER TABLE game.favourite ADD CONSTRAINT favourite_user
     FOREIGN KEY (user_id)
-        REFERENCES "user" (id)
+        REFERENCES game."user" (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: game_question_game (table: game_location)
-ALTER TABLE game_location ADD CONSTRAINT game_question_game
+ALTER TABLE game.game_location ADD CONSTRAINT game_question_game
     FOREIGN KEY (game_id)
-        REFERENCES game (id)
+        REFERENCES game.game (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: game_question_location (table: game_location)
-ALTER TABLE game_location ADD CONSTRAINT game_question_location
+ALTER TABLE game.game_location ADD CONSTRAINT game_question_location
     FOREIGN KEY (location_id)
-        REFERENCES location (id)
+        REFERENCES game.location (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: game_user (table: game)
-ALTER TABLE game ADD CONSTRAINT game_user
+ALTER TABLE game.game ADD CONSTRAINT game_user
     FOREIGN KEY (user_id)
-        REFERENCES "user" (id)
+        REFERENCES game."user" (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: random_game_questions_location (table: random_game_location)
-ALTER TABLE random_game_location ADD CONSTRAINT random_game_questions_location
+ALTER TABLE game.random_game_location ADD CONSTRAINT random_game_questions_location
     FOREIGN KEY (location_id)
-        REFERENCES location (id)
+        REFERENCES game.location (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: random_game_questions_random_game (table: random_game_location)
-ALTER TABLE random_game_location ADD CONSTRAINT random_game_questions_random_game
+ALTER TABLE game.random_game_location ADD CONSTRAINT random_game_questions_random_game
     FOREIGN KEY (random_game_id)
-        REFERENCES random_game (id)
+        REFERENCES game.random_game (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: random_game_user (table: random_game)
-ALTER TABLE random_game ADD CONSTRAINT random_game_user
+ALTER TABLE game.random_game ADD CONSTRAINT random_game_user
     FOREIGN KEY (user_id)
-        REFERENCES "user" (id)
+        REFERENCES game."user" (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: score_board_game (table: leader_board)
-ALTER TABLE leader_board ADD CONSTRAINT score_board_game
+ALTER TABLE game.leader_board ADD CONSTRAINT score_board_game
     FOREIGN KEY (game_id)
-        REFERENCES game (id)
+        REFERENCES game.game (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: score_board_user (table: leader_board)
-ALTER TABLE leader_board ADD CONSTRAINT score_board_user
+ALTER TABLE game.leader_board ADD CONSTRAINT score_board_user
     FOREIGN KEY (user_id)
-        REFERENCES "user" (id)
+        REFERENCES game."user" (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: user_game_game (table: user_game)
-ALTER TABLE user_game ADD CONSTRAINT user_game_game
+ALTER TABLE game.user_game ADD CONSTRAINT user_game_game
     FOREIGN KEY (game_id)
-        REFERENCES game (id)
+        REFERENCES game.game (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: user_game_question_game (table: user_game_location)
-ALTER TABLE user_game_location ADD CONSTRAINT user_game_question_game
+ALTER TABLE game.user_game_location ADD CONSTRAINT user_game_question_game
     FOREIGN KEY (game_id)
-        REFERENCES game (id)
+        REFERENCES game.game (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: user_game_question_location (table: user_game_location)
-ALTER TABLE user_game_location ADD CONSTRAINT user_game_question_location
+ALTER TABLE game.user_game_location ADD CONSTRAINT user_game_question_location
     FOREIGN KEY (location_id)
-        REFERENCES location (id)
+        REFERENCES game.location (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: user_game_question_user (table: user_game_location)
-ALTER TABLE user_game_location ADD CONSTRAINT user_game_question_user
+ALTER TABLE game.user_game_location ADD CONSTRAINT user_game_question_user
     FOREIGN KEY (user_id)
-        REFERENCES "user" (id)
+        REFERENCES game."user" (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: user_game_question_user_game (table: user_game_location)
-ALTER TABLE user_game_location ADD CONSTRAINT user_game_question_user_game
+ALTER TABLE game.user_game_location ADD CONSTRAINT user_game_question_user_game
     FOREIGN KEY (user_game_id)
-        REFERENCES user_game (id)
+        REFERENCES game.user_game (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: user_game_user (table: user_game)
-ALTER TABLE user_game ADD CONSTRAINT user_game_user
+ALTER TABLE game.user_game ADD CONSTRAINT user_game_user
     FOREIGN KEY (user_id)
-        REFERENCES "user" (id)
+        REFERENCES game."user" (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
 
 -- Reference: user_role (table: user)
-ALTER TABLE "user" ADD CONSTRAINT user_role
+ALTER TABLE game."user" ADD CONSTRAINT user_role
     FOREIGN KEY (role_id)
-        REFERENCES role (id)
+        REFERENCES game.role (id)
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;

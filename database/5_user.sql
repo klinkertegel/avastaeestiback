@@ -1,5 +1,4 @@
-INSERT INTO game."user" (id, role_id, email, username, password, status) VALUES (default, 1, 'admin', 'admin', '123', 'A');
-
+INSERT INTO game.user (id, role_id, email, username, password, status) VALUES (default, 1, 'admin', 'admin', '123', 'A');
 INSERT INTO game."user" (id, role_id, email, username, password, status) VALUES (default, 2, 'rain@example.com', 'rain', 'rain123', 'A');
 INSERT INTO game."user" (id, role_id, email, username, password, status) VALUES (default, 2, 'sten@example.com', 'sten', 'sten123', 'A');
 INSERT INTO game."user" (id, role_id, email, username, password, status) VALUES (default, 2, 'stella@example.com', 'stella', 'stella123', 'A');
