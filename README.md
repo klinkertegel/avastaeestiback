@@ -1,29 +1,7 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This project was made together with Brita Puusemp and Janne Objartel and is the graduation project of the Vali-IT program. This backend application (buit with Springboot) goes together with the Frontend application (Vue): https://github.com/klinkertegel/avastaeestifront
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+This project runs the backend for the avasta eesti game
